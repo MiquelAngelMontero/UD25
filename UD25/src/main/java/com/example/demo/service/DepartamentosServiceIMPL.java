@@ -19,8 +19,8 @@ public class DepartamentosServiceIMPL implements IDepartamentosService{
 	}
 
 	@Override
-	public Departamentos guardarDepartamentos(Departamentos empleados) {
-		return iDepartamentosDAO.save(empleados);
+	public Departamentos guardarDepartamentos(Departamentos departamentos) {
+		return iDepartamentosDAO.save(departamentos);
 	}
 
 	@Override
@@ -29,8 +29,8 @@ public class DepartamentosServiceIMPL implements IDepartamentosService{
 	}
 
 	@Override
-	public Departamentos actualizarDepartamento(Departamentos empleados) {
-		return iDepartamentosDAO.save(empleados);
+	public Departamentos actualizarDepartamento(Departamentos departamentos) {
+		return iDepartamentosDAO.save(departamentos);
 	}
 
 	@Override

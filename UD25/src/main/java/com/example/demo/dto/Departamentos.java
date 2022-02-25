@@ -34,7 +34,6 @@ public class Departamentos {
 	 * @param id
 	 * @param nombre
 	 * @param presupuesto
-	 * @param
 	 */
 	public Departamentos() {
 
