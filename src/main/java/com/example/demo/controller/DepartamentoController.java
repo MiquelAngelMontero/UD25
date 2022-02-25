@@ -23,11 +23,11 @@ public class DepartamentoController {
 	DepartamentosServiceIMPL departamentosServiceIMPL;
 	
 	@GetMapping("/departamentos")
-	public List<Departamentos> listarEmpleados(){
+	public List<Departamentos> listarDepartamentos(){
 		return departamentosServiceIMPL.listarDepartamentos();
 	}
 	
-	@PostMapping("departamentos")
+	@PostMapping("/departamentos")
 	public Departamentos guardarDepartamentos(@RequestBody Departamentos departamentos) {
 		return departamentosServiceIMPL.guardarDepartamentos(departamentos);
 	}
@@ -43,7 +43,7 @@ public class DepartamentoController {
 		return dep_xid;
 	}
 	
-	@PutMapping("departamentos/{id}")
+	@PutMapping("/departamentos/{id}")
 	public Departamentos actualizarDepartamento(@PathVariable(name="id") Long id,@RequestBody Departamentos departamentos) {
 		Departamentos dep_sel = new Departamentos();
 		Departamentos dep_act = new Departamentos();
@@ -60,7 +60,7 @@ public class DepartamentoController {
 		return dep_act;
 	}
 	
-	@DeleteMapping("departamentos/{id}")
+	@DeleteMapping("/departamentos/{id}")
 	public void eliminarDepartamento(@PathVariable(name="id")Long id) {
 		departamentosServiceIMPL.eliminarDepartamento(id);
 	}
