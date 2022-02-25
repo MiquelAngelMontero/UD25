@@ -14,7 +14,9 @@ import javax.persistence.Table;
 public class Empleados {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id; 
+	private int id; 
+	@Column(name="dni")
+	private String dni;
 	@Column(name="nombre")
 	private String nombre;
 	@Column(name="apellidos")
@@ -27,6 +29,7 @@ public class Empleados {
 	//Constructores
 	/**
 	 * @param id
+	 * @param dni
 	 * @param nombre
 	 * @param apellidos
 	 * @param departamentos
@@ -35,8 +38,9 @@ public class Empleados {
 		
 	}
 	
-	public Empleados(String id, String nombre, String apellidos, Departamentos departamentos) {
+	public Empleados(int id, String dni, String nombre, String apellidos, Departamentos departamentos) {
 		this.id=id;
+		this.dni=dni;
 		this.nombre=nombre;
 		this.apellidos=apellidos;
 		this.departamentos=departamentos;
@@ -46,13 +50,13 @@ public class Empleados {
 	/**
 	 * @return the id
 	 */
-	public String getid() {
+	public int getid() {
 		return id;
 	}
 	/**
 	 * @param id the id to set
 	 */
-	public void setid(String id) {
+	public void setid(int id) {
 		this.id = id;
 	}
 	/**
@@ -96,10 +100,24 @@ public class Empleados {
 	public void setDepartamentos(Departamentos departamentos) {
 		this.departamentos = departamentos;
 	}
+	
+	/**
+	 * @return the dni
+	 */
+	public String getDni() {
+		return dni;
+	}
+	
+	/**
+	 * @param dni the dni to set
+	 */
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
 
 	@Override
 	public String toString() {
-		return "Empleados [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", departamentos="
+		return "Empleados [id=" + id + ", dni=\" + dni + \", nombre=" + nombre + ", apellidos=" + apellidos + ", departamentos="
 				+ departamentos + "]";
 	}
 }

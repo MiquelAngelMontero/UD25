@@ -3,10 +3,12 @@ package com.example.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.IEmpleadosDAO;
 import com.example.demo.dto.Empleados;
 
+@Service
 public class EmpleadosServiceIMPL implements IEmpleadosService {
 
 	@Autowired
@@ -21,7 +23,7 @@ public class EmpleadosServiceIMPL implements IEmpleadosService {
 		return iEmpleadosDAO.save(empleado);
 	}
 	@Override
-	public Empleados empleadoXID(String id) {
+	public Empleados empleadoXID(int id) {
 		return iEmpleadosDAO.findById(id).get();
 	}
 	
@@ -31,7 +33,7 @@ public class EmpleadosServiceIMPL implements IEmpleadosService {
 	}
 	
 	@Override
-	public void eliminarEmpleados(String id) {
+	public void eliminarEmpleados(int id) {
 		iEmpleadosDAO.deleteById(id);
 	}
 	
